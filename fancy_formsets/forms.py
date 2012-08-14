@@ -8,7 +8,7 @@ from django.forms.formsets import DELETION_FIELD_NAME
 
 class FancyBaseInlineFormSet(BaseInlineFormSet):
     helper = None
-    empty_form = None
+    #empty_form = None
 
     def __init__(self, *args, **kwargs):
         if not self.helper:
@@ -17,7 +17,7 @@ class FancyBaseInlineFormSet(BaseInlineFormSet):
         self.verbose_name_plural = self.model._meta.verbose_name_plural
         self.model_name = str(self.model._meta).split(".")[-1]
         super(FancyBaseInlineFormSet, self).__init__(*args, **kwargs)
-        self.empty_form = self._construct_form(9999999999999)
+        #self.empty_form = self._construct_form(9999999999999)
         for form in self.forms:
             if form in self.extra_forms:
                 form.is_extra = True
@@ -28,6 +28,6 @@ class FancyBaseInlineFormSet(BaseInlineFormSet):
 
     template = get_template("fancy_formsets_bootstrap/form.html")
 
-    def render_empty_form(self):
-        self.empty_form.helper = InlineFormHelper()
-        return escape(self.template.render(Context({"form": self.empty_form})))
+    #def render_empty_form(self):
+    #    self.empty_form.helper = InlineFormHelper()
+    #    return escape(self.template.render(Context({"form": self.empty_form})))
