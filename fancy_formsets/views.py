@@ -35,7 +35,8 @@ class FormsetsView(TemplateView):
         for formset_setting in self.formset_settings:
             formset = formset_setting['class'](
                 instance=formset_setting['get_instance'](self),
-                data=self.request.POST or None
+                data=self.request.POST or None,
+                files=self.request.FILES or None
             )
             formset.readonly = self.readonly
             if not hasattr(formset.form, "helper"):
