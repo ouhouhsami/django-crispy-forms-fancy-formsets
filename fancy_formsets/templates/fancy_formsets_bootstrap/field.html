@@ -4,7 +4,7 @@
 {% if field.is_hidden %}
   {{ field }}
 {% else %}
-  <td id="div_{{ field.auto_id }}" class="clearfix control-group{% if form_show_errors%}{% if field.errors and not form.is_extra %} error{% endif %}{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %} {{field.name}}">
+  <td id="div_{{ field.auto_id }}" class="control-group{% if form_show_errors%}{% if field.errors and not form.is_extra %} error{% endif %}{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %} {{field.name}}">
     {% if field|css_class == "checkboxselectmultiple" %}
       {% include 'bootstrap/layout/checkboxselectmultiple.html' %}
     {% endif %}
