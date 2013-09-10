@@ -3,12 +3,13 @@
 {% if not formset.readonly %}
 <tr>
   <td colspan="{{formset.empty_form.visible_fields|length}}">
-    <a href="#" class="btn fancy-formsets-add-row" data-formset_prefix="{{ formset.prefix }}">
-      <i class="icon-plus-sign"></i> {% trans "Add" %} {{formset.verbose_name|lower}} 
+    <a href="#" class="btn btn-default fancy-formsets-add-row" data-formset_prefix="{{ formset.prefix }}">
+      <i class="icon-plus-sign"></i> {% trans "Add" %} {{formset.verbose_name|lower}}
     </a>
   </td>
 </tr>
 <script type="text/javascript">
-	var {{ formset.prefix }}_empty_form = '{% filter escapejs %}{% include "fancy_formsets_bootstrap/form.html" with form=formset.empty_form %}{% endfilter %}';
+var {{ formset.prefix }}_empty_form = '{% filter escapejs %}{% include "fancy_formsets_bootstrap/form.html" with form=formset.empty_form %}{% endfilter %}';
 </script>
 {% endif %}
+
