@@ -11,7 +11,7 @@ $(function() {
 		return false;
 	});
 	
-	$('span.fancy-formsets-delete a').live('click', function() {
+	$('span.fancy-formsets-delete a').on('click', function() {
 		$(this).parents("span.fancy-formsets-delete").find("input")
 			.prop('checked', true);
 		$(this).parents("tr").addClass("hidden");
